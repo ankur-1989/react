@@ -1,21 +1,15 @@
 
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Count from './components/Count';
-function App() {
-  
 
+import "./App.css";
+import Count from "./components/Count";
+import { Home } from "./components/Home";
+import List from "./components/List";
+import Prop from "./components/Prop";
+import { ITEMS } from "./data/db";
+function App() {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+      <Home />
       <h1>Vite + React</h1>
       <div className="card">
         <Count />
@@ -23,15 +17,13 @@ function App() {
         <Count />
         <br />
         <Count />
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <Prop name="Ankur" />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ul>
+        <List items={ITEMS} />
+      </ul>
     </>
-  )
+  );
 }
 
 export default App
